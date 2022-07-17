@@ -1,53 +1,22 @@
-/* ----------------------------------------------------------- reset css ----------------------------------------------------------- */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-body {
-    line-height: 1.5;
-}
-ol, ul {
-    list-style: none;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-
 /* ----------------------------------------------------------- geral ----------------------------------------------------------- */
 
 * {
   font-family: "Poppins", sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border: #00cdac solid 5px;
+  /* font-size: 100%;
+    vertical-align: baseline; */
 }
 
 a {
@@ -55,49 +24,41 @@ a {
   color: black;
 }
 
-a:hover{
-   color: white;
-   transition: 0.5s;
-}
-
-body{
-   border: #00cdac solid 5px;
-}
-
-h1 {
-  color: #20c997;
+a:hover {
+  color: white;
+  transition: 0.5s;
 }
 
 li {
   display: inline;
-  padding: 0px 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+li:hover {
+  cursor: pointer;
 }
 
 ul {
-  list-style-type: none;
   margin: 0;
   padding: 0;
-  text-align: end;
 }
 
 /* ----------------------------------------------------------- classes ----------------------------------------------------------- */
 
 .nav-container {
+  font-weight: 300;
   background-color: #00cdac;
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 10% 90%;
+  display: flex;
+  justify-content: space-between;
   color: black;
-  padding-bottom: 5px;
+  padding: 0px 0px 10px 0px;
+  margin: 0;
 }
 
 .nav-item {
-  font-size: 1.5em;
-  align-items: center;
-  padding-left: 10px;
-  padding-right: 10px;
+  font-size: 1.3em;
   transition: 0.5s;
-
 }
 
 .nav-item:hover {
@@ -106,7 +67,11 @@ ul {
 
 .title {
   font-size: 3em;
-  font-weight: 600;
+  font-weight: 300;
+}
+
+.project-text-title{
+
 }
 
 .text-color-main {
@@ -115,20 +80,27 @@ ul {
 
 .home-content {
   text-align: left;
-  padding-top: 200px;
-  padding-left: 200px;
+  margin-top: 250px;
+  margin-right: 200px;
+  margin-left: 200px;
+  margin-bottom: 500px;
+  border-bottom: solid 2px #00cdac;
+}
+
+.paddingLeftBottom {
+  padding-bottom: 10px;
 }
 
 .home-button {
   background-color: #00cdac;
   border: none;
   color: white;
-  padding: 12px 24px;
+  padding: 6px 12px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
-  margin: 4px 2px;
+
   transition-duration: 0.5s;
   cursor: pointer;
 }
@@ -138,7 +110,7 @@ ul {
 }
 
 .button1 {
-  background-color: #00cdac;;
+  background-color: #00cdac;
   color: black;
 }
 
@@ -147,3 +119,76 @@ ul {
   color: #00cdac;
 }
 
+.projects-content {
+  background-color:#00cdac;
+  text-align: center;
+  align-items: center;
+  padding: 0px 100px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 0.2fr 1fr 1fr 1fr;
+  gap: 0px 50px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "projects-title projects-title"
+    "projects-text1 projects-photo1"
+    "projects-text2 projects-photo2"
+    "projects-text3 projects-photo3";
+}
+
+.projects-title {
+  grid-area: projects-title;
+}
+
+.projects-text1 {
+  text-align: left;
+  grid-area: projects-text1;
+  background-color: brown;
+}
+
+.projects-photo1 {
+  grid-area: projects-photo1;
+  background-color: green;
+}
+
+.projects-text2 {
+  text-align: left;
+  grid-area: projects-text2;
+  background-color: brown;
+  
+}
+
+.projects-photo2 {
+  grid-area: projects-photo2;
+  background-color: green;
+}
+
+.projects-text3 {
+  text-align: left;
+  grid-area: projects-text3;
+  background-color: brown;
+
+}
+
+.projects-photo3 {
+  grid-area: projects-photo3;
+  background-color: green;
+
+}
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+}
+
+/*Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+}
